@@ -1,0 +1,25 @@
+GET http://localhost:3000/products 
+
+###
+GET http://localhost:3000/products
+
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name":"mmm",
+    "subscribedToChannel":"muneeb"
+}
+
+###
+DELETE http://localhost:3000/products
+
+###
+PATCH http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name":"new person"
+}
