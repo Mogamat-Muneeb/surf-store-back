@@ -7,23 +7,30 @@ GET http://localhost:3000/products
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYxM2RhM2ExNmIxMWU4MmQ3YjJjMSIsImlhdCI6MTY0NTc3NDQwMSwiZXhwIjoxNjQ1ODYwODAxfQ.GQmBZKkwHt2Lu_kcKkvBkRpsBG2MmpbMVBTn6KcQwqk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
 
 {
-        "title":"long",
-        "category": "pants",
+        "title":"jersey",
+        "category": "clothes",
         "description":"black",
         "img": "jhkhkh",
         "price": 12.00
 }
 
 ###
-DELETE http://localhost:3000/products
+DELETE http://localhost:3000/products/6218918a172c6d549b81c0b0
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
 
 ###
-PATCH http://localhost:3000/products
+PATCH http://localhost:3000/products/6218a8181db433e61fc2c364
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
 
 {
-    "name":"new person"
+        "title":"shirt",
+        "category": "yaaseen1",
+        "description":"black",
+        "img": "jhkhkh",
+        "price": 13.00
 }

@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 const  bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const verifyToken = require('../middleware/auth.jwt')
 
 
 router.get('/', async (req, res) => {
@@ -22,7 +23,7 @@ router.post('/signup',Duplicates, async (req, res) => {
     try{ 
         const salt = await bcrypt.genSalt()
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
-        const user = new User ({  fullname: req.body.fullname,
+        const user = new User({  fullname: req.body.fullname,
                         email: req.body.email,
                         password: hashedPassword,
                         phone_number: req.body.phone_number,
@@ -68,7 +69,10 @@ router.post('/signin', async (req, res) => {
     }
 })
 
-router.patch('/:id',getUser, async (req, res) => {
+router.patch('/:id',[getUser,verifyToken], async (req, res) => {
+    if(req.params.id != req.userId){
+        return res.status(401).send({ message: "Unauthorized!" });
+    }
     if(req.body.fullname !=null){
         res.user.fullname =  req.body.fullname
     }
@@ -81,9 +85,7 @@ router.patch('/:id',getUser, async (req, res) => {
     if(req.body.phone_number !=null){
         res.user.phone_number =  req.body.phone_number
     }
-    if(req.body.cart !=null){
-        res.user.cart =  req.body.cart
-    }
+    
     try{
         const updatedUser = await res.user.save()
         res.json(updatedUser)
@@ -92,8 +94,11 @@ router.patch('/:id',getUser, async (req, res) => {
     }
 })
 
-router.delete('/:id',getUser, async (req, res) => {
+router.delete('/:id',[getUser,verifyToken], async (req, res) => {
     try{
+        if(req.params.id != req.userId){
+            return res.status(401).send({ message: "Unauthorized!" });
+        }
         await res.user.remove()
         res.json({ message:'Deleted User'})
     } catch (err) {
@@ -122,7 +127,7 @@ async function Duplicates(req, res, next){
 let user 
 
 try{
-    user = await User.findOne({fullName: req.body.fullName})
+    user = await User.findOne({fullname: req.body.fullname})
     email = await User.findOne({email: req.body.email})
     if(user || email){
         return res.status(404).send({ message:"username or email already in exits"});
@@ -132,5 +137,8 @@ try{
 }
 next()
 }
+
+
+
 
 module.exports = router
