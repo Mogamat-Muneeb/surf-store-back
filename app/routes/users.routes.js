@@ -18,7 +18,7 @@ router.get('/:id', getUser , (req, res) => {
     res.json(res.user)
 })
 
-router.post('/signup', async (req, res) => {
+router.post('/signup',Duplicates, async (req, res) => {
     try{ 
         const salt = await bcrypt.genSalt()
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -53,7 +53,7 @@ router.post('/signin', async (req, res) => {
           message: "Invalid Password!"
         });
       }
-      let token = jwt.sign({ id:  customer.id }, process.env.SECRET_KEY, {
+      let token = jwt.sign({ id:  customer.id }, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: 86400 // 24 hours
       });
       res.status(200).send({
@@ -116,4 +116,21 @@ router.delete('/:id',getUser, async (req, res) => {
     res.user = user
     next()
 }
+
+
+async function Duplicates(req, res, next){
+let user 
+
+try{
+    user = await User.findOne({fullName: req.body.fullName})
+    email = await User.findOne({email: req.body.email})
+    if(user || email){
+        return res.status(404).send({ message:"username or email already in exits"});
+    }
+  } catch(err){
+    return res.status(500).send({ message:err.message})
+}
+next()
+}
+
 module.exports = router

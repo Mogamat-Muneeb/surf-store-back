@@ -7,10 +7,14 @@ GET http://localhost:3000/products
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYxM2RhM2ExNmIxMWU4MmQ3YjJjMSIsImlhdCI6MTY0NTc3NDQwMSwiZXhwIjoxNjQ1ODYwODAxfQ.GQmBZKkwHt2Lu_kcKkvBkRpsBG2MmpbMVBTn6KcQwqk
 
 {
-    "name":"mmm",
-    "subscribedToChannel":"muneeb"
+        "title":"long",
+        "category": "pants",
+        "description":"black",
+        "img": "jhkhkh",
+        "price": 12.00
 }
 
 ###

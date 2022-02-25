@@ -16,6 +16,5 @@ app.use('/users', usersRouter)
 const productsRouter = require('./app/routes/products.routes.js')
 app.use('/products', productsRouter)
 
-console.log('Hellp Muneeb');
 
 app.listen(process.env.PORT || 3000, () => console.log('Server Started'))

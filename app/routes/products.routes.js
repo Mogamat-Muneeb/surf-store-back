@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Product = require('../models/product')
+const verifyToken = require('../middleware/auth.jwt')
+
 
 router.get('/', async (req, res) => {
    try {
@@ -15,14 +17,14 @@ router.get('/:id', getProduct , (req, res) => {
     res.json(res.product)
 })
 
-router.post('/', async (req, res) => {
-    const product = await Product({
+router.post('/',verifyToken, async (req, res) => {
+    const product = new Product({
         title: req.body.title,
-        catergory: req.body.email,
+        category: req.body.category,
         description: req.body.description,
         img: req.body.img,
-       price: req.body.cart,
-       created_by: req.body.created_by
+       price: req.body.price,
+       created_by: req.userId
     })
     try{
         const newProduct = await product.save()

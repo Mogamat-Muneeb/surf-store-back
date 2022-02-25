@@ -1,13 +1,14 @@
 const jwt = require("jsonwebtoken");
 
 verifyToken = (req, res, next) => {
-  let token = req.headers["x-access-token"];
-  if (!token) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+  if(!token) {
     return res.status(403).send({
       message: "No token provided!"
     });
   }
-  jwt.verify(token, config.secret, (err, decoded) => {
+  jwt.verify(token ,process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).send({
         message: "Unauthorized!"
