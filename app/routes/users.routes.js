@@ -30,8 +30,8 @@ router.post('/signup',Duplicates, async (req, res) => {
                         })
             const newUser = await user.save()
             res.status(201).json(newUser)
-            // console.log(salt)
-            // console.log(hashedPassword)
+            console.log(salt)
+            console.log(hashedPassword)
     } catch(err){
         res.status(400).json({ message: err.message })
     }
@@ -54,11 +54,12 @@ router.post('/signin', async (req, res) => {
           message: "Invalid Password!"
         });
       }
-      let token = jwt.sign({ id:  customer.id }, process.env.ACCESS_TOKEN_SECRET, {
+      
+      let token = jwt.sign({ _id:  customer._id, cart: customer.cart }, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: 86400 // 24 hours
       });
       res.status(200).send({
-        id:  customer.id,
+        _id:  customer._id,
         username:  customer.username,
         email:  customer.email,
         accessToken: token

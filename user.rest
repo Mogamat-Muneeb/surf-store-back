@@ -5,26 +5,24 @@ GET http://localhost:3000/users
 
 
 ###
-POST http://localhost:3000/users/signup
+POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-      "fullname":"wwwmjnUY",
-      "email":",imJJHiwww@gmail.com",
-      "password":"njjnueep11",
-      "phone_number":"079155555"
+      "fullname":"muneeb",
+      "password":"muneeb"
+     
    
 }
 
 
 ###
-DELETE http://localhost:3000/users/621614ddccd9fee91b170d34
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYxNGRkY2NkOWZlZTkxYjE3MGQzNCIsImlhdCI6MTY0NTc3NjkwMiwiZXhwIjoxNjQ1ODYzMzAyfQ.E5yZfjorFdlGwLTWTXgTF57Ve2-EQ4zu_iadteyqPbs
+DELETE http://localhost:3000/users/621a0d63835082dcb3cfab68
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWEwZDYzODM1MDgyZGNiM2NmYWI2OCIsImlhdCI6MTY0NTg3NDY0NywiZXhwIjoxNjQ1OTYxMDQ3fQ.DNDtSoASZpjyJZylBj3jf-CyFJMFo0BllFmkf6RDEO8
 ###
 PATCH http://localhost:3000/users/621608233a16b11e82d7b2bf
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYwODIzM2ExNmIxMWU4MmQ3YjJiZiIsImlhdCI6MTY0NTc4MjY1OSwiZXhwIjoxNjQ1ODY5MDU5fQ.BPYaMdB8FjrFFj0pKlnxlw7Ojo2Zi0Zew8luBt-bXkc
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMWEwZDYzODM1MDgyZGNiM2NmYWI2OCIsImlhdCI6MTY0NTg3NDU1MCwiZXhwIjoxNjQ1OTYwOTUwfQ.a2sHm8JrT8-D_kUn2pCLJxK_ushb3fv57aTo4e7Ogw4
 {
          "fullname":"muneeb"
         

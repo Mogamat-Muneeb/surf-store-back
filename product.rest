@@ -1,16 +1,16 @@
 GET http://localhost:3000/products 
 
 ###
-GET http://localhost:3000/products
+GET http://localhost:3000/products/62189f8e8a41c89aae54d972
 
 
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwMzY3NzIsImV4cCI6MTY0NjEyMzE3Mn0.fw9bLdUNUta-6ScXh8bcpVEYzfl13n4kPjFzrAwiCKA
 
 {
-        "title":"jersey",
+        "title":"tshirt12",
         "category": "clothes",
         "description":"black",
         "img": "jhkhkh",
@@ -18,12 +18,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxM
 }
 
 ###
-DELETE http://localhost:3000/products/6218918a172c6d549b81c0b0
+DELETE http://localhost:3000/products/621c7be19a64c6550fcbb02a
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwMzM4NzksImV4cCI6MTY0NjEyMDI3OX0.PvcfWzYsS_AamRMGGtdZqWwI2UXncOL14ZDqNWBqyn4
 
 ###
-PATCH http://localhost:3000/products/6218a8181db433e61fc2c364
+PATCH http://localhost:3000/products/621c7be19a64c6550fcbb02a
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxMTQ3OGVmMzEzNzQxZjFhYyIsImlhdCI6MTY0NTc3NzI1MywiZXhwIjoxNjQ1ODYzNjUzfQ.PiuqLQuVeS54irksPNbDWLetrZXwNP23LclyAu-I7YU
 
@@ -31,6 +31,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYyZDQxM
         "title":"shirt",
         "category": "yaaseen1",
         "description":"black",
-        "img": "jhkhkh",
+      
         "price": 13.00
 }

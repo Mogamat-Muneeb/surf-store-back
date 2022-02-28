@@ -1,0 +1,20 @@
+GET http://localhost:3000/cart
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwNDA2MjksImV4cCI6MTY0NjEyNzAyOX0.v3XR-ZBSLF2645JBiDuQYTyJLGWdnds6QpjTm6M6PwM
+
+
+###
+DELETE http://localhost:3000/cart
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwNDA2MjksImV4cCI6MTY0NjEyNzAyOX0.v3XR-ZBSLF2645JBiDuQYTyJLGWdnds6QpjTm6M6PwM
+
+###
+PUT http://localhost:3000/cart
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwMzU2MDEsImV4cCI6MTY0NjEyMjAwMX0.rOeyGd5TpxDQHnrfbyuUCRvLiycN2h_dU-aQcfyIOPI
+
+###
+POST http://localhost:3000/cart/621c9412851ecf557194d5bb
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwNDEwODMsImV4cCI6MTY0NjEyNzQ4M30.pJyLVwq6ZIw4I_jPCrGAVnn68NHf1-6mQVCcGjLeyi8
+
+{
+    "qty":10
+}

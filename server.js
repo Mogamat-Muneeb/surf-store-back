@@ -15,6 +15,7 @@ const usersRouter = require('./app/routes/users.routes.js')
 app.use('/users', usersRouter)
 const productsRouter = require('./app/routes/products.routes.js')
 app.use('/products', productsRouter)
-
+const cartRouter = require('./app/routes/cart.routes.js')
+app.use('/cart', cartRouter)
 
 app.listen(process.env.PORT || 3000, () => console.log('Server Started'))
