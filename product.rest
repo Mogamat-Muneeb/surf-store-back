@@ -7,10 +7,10 @@ GET http://localhost:3000/products/62189f8e8a41c89aae54d972
 ###
 POST http://localhost:3000/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmQ0MTE0NzhlZjMxMzc0MWYxYWMiLCJpYXQiOjE2NDYwMzY3NzIsImV4cCI6MTY0NjEyMzE3Mn0.fw9bLdUNUta-6ScXh8bcpVEYzfl13n4kPjFzrAwiCKA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MDgyMzNhMTZiMTFlODJkN2IyYmYiLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDUwMjc3LCJleHAiOjE2NDYxMzY2Nzd9.iCzF1d3MSTYAybvkdHX9A2IW6RnHo4nKpmT9_YJbiug
 
 {
-        "title":"tshirt12",
+        "title":"tshirtneeb0",
         "category": "clothes",
         "description":"black",
         "img": "jhkhkh",
