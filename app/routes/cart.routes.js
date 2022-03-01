@@ -49,6 +49,26 @@ router.delete("/", [verifyToken, getUser], async (req, res) => {
     }
 });
 
+router.delete("/:id", [verifyToken, getUser], async (req, res) => {
+  let cart = req.cart;
+  cart.forEach((cartitem) => {
+    if (cartitem._id == req.params.id) {
+      cart = cart.filter((cartitems) => cartitems._id != req.params.id);
+    }
+  });
+  try {
+    res.user.cart = cart;
+
+    const updated = res.user.save();
+    let token = jwt.sign({ _id: req.userId, cart }, process.env.ACCESSTOKEN, {
+      expiresIn: 86400, // 24 hours
+    });
+    res.json({ message: "Deleted product", updated, token });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 router.put("/:id", [verifyToken, getProduct], async (req, res) => {
   const user = await User.findById(req.userId);
   const inCart = user.cart.some((prod) => prod._id == req.params._id);
